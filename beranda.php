@@ -10,6 +10,7 @@
 
 <body>
     <?php
+    require 'adminPermission.inc';
     include "header.inc";
     ?>
 
