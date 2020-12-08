@@ -33,7 +33,7 @@
             $statement->bindValue(":avatar", $_POST['avatar']);
             $statement->bindValue(":type", $_POST['type']);
             $statement->execute();
-            header("location:../index.php");
+            header("location:index.php");
         }
     }
     ?>
