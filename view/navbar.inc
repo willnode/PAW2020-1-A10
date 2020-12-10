@@ -1,4 +1,4 @@
-<div class="header">
+<div class="navbar">
     <ol>
         <li><a href="login.php">Login</a></li>
         <li><a href="register.php">Register</a></li>

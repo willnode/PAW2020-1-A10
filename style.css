@@ -2,15 +2,15 @@ html {
     height: 100%;
 }
 
-.header {
+.navbar {
     height: 50px;
 }
 
-.header ol {
+.navbar ol {
     list-style: none;
 }
 
-.header li {
+.navbar li {
     float: right;
     padding-right: 20px;
 }

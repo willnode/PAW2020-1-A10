@@ -1,6 +1,4 @@
-    <?php
-
-    use function PHPSTORM_META\type;
+<?php
 
     function required(&$error, $field_list, $field_name)
     {
