@@ -4,7 +4,17 @@
 
 <body>
     <?php include "navbar.inc"; ?>
-    Dashboard
+    	<?php
+			$statement = $dbc->query("SELECT * from topic"); foreach ($statement as $data):
+		?>
+<div>
+	<a href = "topik.php?topik=<?=$data['topic_id']?>">
+	<?= $data['title'] ?></a>
+</div>
+		<?php
+
+			endforeach
+		?>
     <?php include "footer.inc"; ?>
 </body>
 
