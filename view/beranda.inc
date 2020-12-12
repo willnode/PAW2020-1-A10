@@ -4,7 +4,9 @@
 
 <body>
     <?php include "navbar.inc"; ?>
-    Beranda
+    <div class="content">
+        Beranda
+    </div>
     <?php include "footer.inc"; ?>
 </body>
 

@@ -10,13 +10,22 @@ html {
     list-style: none;
 }
 
-.navbar li {
+.left-bar li {
+    float: left;
+    padding-right: 20px;
+}
+
+.right-bar li {
     float: right;
     padding-right: 20px;
 }
 
 .content {
     height: 600px;
+    width: 90%;
+    border: 1px solid;
+    padding: 20px;
+    margin: auto;
 }
 
 .footer {
