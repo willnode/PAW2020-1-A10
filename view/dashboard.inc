@@ -5,10 +5,7 @@
 <body>
 	<?php include "navbar.inc"; ?>
 	<div class="content">
-		<?php echo "Email =" . $_SESSION['email']; ?>
-		<?php echo "</br>Nama =" . $_SESSION['nama']; ?>
-		<?php echo "</br>bio =" . $_SESSION['bio']; ?>
-		<?php echo "</br>Type =" . $_SESSION['type']; ?>
+		<h1>Dashboard</h1>
 		<?php
 		$statement = $dbc->query("SELECT * from topic");
 		foreach ($statement as $data) :
