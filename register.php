@@ -9,18 +9,21 @@ if (isset($_POST['submit'])) {
     ValidateEmail($emailErr, $_POST, "email"); //validasi email
     validatePass($passwordErr, $_POST, "password"); //validasi password
     required($bioErr, $_POST, "bio"); //validasi bio
-    required($avatarErr, $_POST, "avatar"); //validasi avatar/profile image
+    validateAvatar($avatarErr, 'avatar', $_FILES); //validasi avatar/profile image
     validateConfirm($confirmErr, $_POST, "confirm", "password"); //validasi confirm password
     //cek jika sudah tidak ada error
-    if ($nameErr == "" && $emailErr == "" && $passwordErr == "" && $confirmErr == "" && $bioErr == "") {
+    if ($nameErr == "" && $emailErr == "" && $passwordErr == "" && $confirmErr == "" && $bioErr == "" && $avatarErr == "") {
+        $name = $_FILES['avatar']['name']; //mengambil nama file
+        $lokasi = $_FILES['avatar']['tmp_name']; //mengambil direktori asal
         $statement = $dbc->prepare("INSERT INTO user (email, password, nama, bio, avatar, type) VALUES (:email, SHA2(:password, 0), :nama,:bio,:avatar, :type)");
         $statement->bindValue(':email', $_POST['email']);
         $statement->bindValue(':password', $_POST['password']);
         $statement->bindValue(':nama', $_POST['name']);
         $statement->bindValue(":bio", $_POST['bio']);
-        $statement->bindValue(":avatar", $_POST['avatar']);
+        $statement->bindValue(":avatar", $name);
         $statement->bindValue(":type", $_POST['type']);
         $statement->execute();
+        move_uploaded_file($lokasi, "image/profile/" . $name);
         header("location:index.php");
     }
 }

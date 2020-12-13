@@ -5,11 +5,17 @@
 html, body {
     height: 100%;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #1E90FF;
+}
+
+ol li {
+    list-style: none;
 }
 
 /* -------navbar----------- */
 
 .navbar {
+    margin: 0px;
     height: 50px;
 }
 
@@ -58,7 +64,6 @@ li a:hover {
 .dropdown {
     float: right;
     position: relative;
-    display: inline-block;
 }
 
 .dropdown-content {
@@ -95,6 +100,13 @@ li a:hover {
     border: 1px solid;
     margin: auto;
     padding: 0 16px;
+    background-color: #f9f9f9;
+}
+
+.center-text {
+    margin-left: auto;
+    margin-right: auto;
+    width: fit-content;
 }
 
 .regisbox {
@@ -103,37 +115,39 @@ li a:hover {
     border: 1px solid #d2d2d2;
     border-radius: 5px;
     margin: 60px auto;
-  }
+}
+
 .regisbox h1 {
     color: black;
     text-align: center;
-
 }
+
 .loginbox {
     width: 400px;
     height: 350px;
     border: 1px solid #d2d2d2;
     border-radius: 5px;
     margin: 60px auto;
-  }
+}
+
 .loginbox h1 {
     color: black;
     text-align: center;
-
 }
 
 .field label {
     margin-left: 19px;
     font-weight: bold;
 }
+
 .form {
     margin-top: 15px;
     float: left;
     padding: 5px;
-  }
+}
 
 .inputan {
-    width: 350px ;
+    width: 350px;
     margin-top: 1px;
     margin-left: 19px;
     margin-right: 20px;
@@ -141,9 +155,10 @@ li a:hover {
     border: 1px solid black;
     font-size: 16px;
     background: transparent;
-  }
+}
+
 .ava {
-    width: 350px ;
+    width: 350px;
     margin-top: 1px;
     margin-left: 19px;
     margin-right: 20px;
@@ -151,7 +166,7 @@ li a:hover {
     border: none;
     font-size: 16px;
     background: transparent;
-  }
+}
 
 .logbutton {
     margin-top: 10px;
@@ -163,8 +178,23 @@ li a:hover {
     border: none;
     color: white;
     font-size: 20px;
-  }
+}
 
+#log-err {
+    padding-left: 80px;
+}
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: fit-content;
+}
+
+img {
+    width: 150px;
+    height: 200px;
+}
 
 .footer {
     text-align: center;

@@ -7,6 +7,9 @@
     <div class="right-bar">
         <ol>
             <?php
+            if (!isset($_SESSION)) {
+                session_start();
+            }
             //cek session aktif
             if (!isset($_SESSION['type'])) {
             ?>

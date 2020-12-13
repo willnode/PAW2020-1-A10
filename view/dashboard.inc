@@ -5,7 +5,7 @@
 <body>
 	<?php include "navbar.inc"; ?>
 	<div class="content">
-		<h1>Dashboard</h1>
+		<h1 class="center-text">Dashboard</h1>
 		<?php
 		$statement = $dbc->query("SELECT * from topic");
 		foreach ($statement as $data) :

@@ -5,11 +5,26 @@
 <body>
     <?php include "navbar.inc"; ?>
     <div class="content">
-        <h1>Profile</h1>
-        <?php echo "Email =" . $_SESSION['email']; ?>
-        <?php echo "</br>Nama =" . $_SESSION['nama']; ?>
-        <?php echo "</br>bio =" . $_SESSION['bio']; ?>
-        <?php echo "</br>Type =" . $_SESSION['type']; ?>
+        <h1 class="center-text">Profile</h1>
+        <?php
+        $query = $dbc->prepare("SELECT avatar FROM user WHERE email=:email");
+        $query->bindValue(":email", $_SESSION['email']);
+        $query->execute();
+        $result = $query->fetchAll(PDO::FETCH_COLUMN, 0);
+        ?>
+        <div class="center">
+            <?php
+            $image = "image/profile/" . $result[0];
+            ?>
+            <img src="<?php echo $image ?>" alt="<?php echo $result[0]; ?>">
+        </div>
+        <div class="center-text">
+            <ol>
+                <li>Email : <?php echo $_SESSION['email']; ?></li>
+                <li>Nama : <?php echo $_SESSION['nama']; ?></li>
+                <li>Bio : <?php echo $_SESSION['bio']; ?></li>
+            </ol>
+        </div>
     </div>
     <?php include "footer.inc"; ?>
 </body>
