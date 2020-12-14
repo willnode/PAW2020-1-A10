@@ -74,14 +74,14 @@ function validateConfirm(&$error, $field_list, $field_name1, $field_name2)
 
 function validateAvatar(&$error, $field_name, $images)
 {
+    $name = $images['avatar']['name']; //mengambil nama file
+    $jenis_gambar = $images['avatar']['type']; //mengambil ekstensi file
+    $ukuran = $images['avatar']['size']; //mengambil ukuran file
+    $lokasi = $images['avatar']['tmp_name']; //mengambil direktori asal
     // cek apakah field kosong
-    if (empty($images)) {
+    if (empty($name)) {
         $error = " *" . $field_name . " is required";
     } else {
-        $name = $images['avatar']['name']; //mengambil nama file
-        $jenis_gambar = $images['avatar']['type']; //mengambil ekstensi file
-        $ukuran = $images['avatar']['size']; //mengambil ukuran file
-        $lokasi = $images['avatar']['tmp_name']; //mengambil direktori asal
         //mengecek apakah format sesuai
         if ($jenis_gambar == "image/jpeg" || $jenis_gambar == "image/jpg" || $jenis_gambar == "image/png") {
             //mengecek ukuran apakah melebihi 5mb

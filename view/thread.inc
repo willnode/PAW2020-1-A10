@@ -13,7 +13,7 @@
             <h1>Diskusi Baru</h1>
             <form method="POST">
                 <div><input name="title"></div>
-                <div><textarea name="question" id="" cols="30" rows="10"></textarea></div>
+                <div><textarea name="question" id="question" cols="30" rows="10"></textarea></div>
                 <div><input type="submit" value="Kirim"></div>
             </form>
 
