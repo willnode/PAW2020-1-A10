@@ -50,7 +50,7 @@ function validatePass(&$error, $field_list, $field_name)
         $error = " *password is required";
         // cek apakah panjang password kurang dari 8 karakter
     } else   if (strlen($field_list[$field_name]) < 8) {
-        $error = "Password is less than 8 character long";
+        $error = "*Password is less than 8 character long";
         // cek apakah password sudah terdiri dari alpha numeric
     } else if ((preg_match("/^[a-zA-Z]*$/", $field_list[$field_name])) || (preg_match("/^[0-10]*$/", $field_list[$field_name]))) {
         $error = " *must contain alphabet & numeric";
@@ -106,5 +106,40 @@ function ValidateEmailLog(&$error, $field_list, $field_name)
         $error = " *invalid email address";
     } else {
         $error = "";
+    }
+}
+
+
+function oldPassword(&$error, $field_list, $field_name, $old_pass)
+{
+    //cek apakah field kosong
+    if (empty($field_list[$field_name])) {
+        $error = " *old password is required";
+        //cek apakah password yang di input sama dengan password lama
+    } else if ($old_pass == 0) {
+        $error = "*Password didn't macth";
+    } else {
+        $error = "";
+    }
+}
+
+function updateAvatar(&$error, $field_name, $images)
+{
+    $name = $images['avatar']['name']; //mengambil nama file
+    $jenis_gambar = $images['avatar']['type']; //mengambil ekstensi file
+    $ukuran = $images['avatar']['size']; //mengambil ukuran file
+    $lokasi = $images['avatar']['tmp_name']; //mengambil direktori asal
+    if (!empty($name)) {
+        //mengecek apakah format sesuai
+        if ($jenis_gambar == "image/jpeg" || $jenis_gambar == "image/jpg" || $jenis_gambar == "image/png") {
+            //mengecek ukuran apakah melebihi 5mb
+            if ($ukuran <= 5000000) {
+                $error = "";
+            } else {
+                $error = " *File size is too large";
+            }
+        } else {
+            $error = " *The format file must be .jpg .jpeg .png";
+        }
     }
 }

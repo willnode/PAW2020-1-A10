@@ -24,6 +24,7 @@ if (isset($_POST['login'])) {
             $query->bindValue(":email", $_POST['email']);
             $query->execute();
             foreach ($query as $row) {
+                $_SESSION['id'] = $row['user_id'];
                 $_SESSION['email'] = $row['email'];
                 $_SESSION['nama'] = $row['nama'];
                 $_SESSION['bio'] = $row['bio'];
