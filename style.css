@@ -151,10 +151,13 @@ li a:hover {
     margin-top: 1px;
     margin-left: 19px;
     margin-right: 20px;
-    height: 30px;
     border: 1px solid black;
     font-size: 16px;
     background: transparent;
+}
+
+input.inputan, select.inputan {
+    height: 30px;
 }
 
 .ava {
@@ -202,4 +205,30 @@ img {
 
 span {
     color: red;
+}
+
+/* Thread */
+
+.chat {
+    display: flex;
+}
+
+.chat .bio {
+    width: 20%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.chat .content {
+    width: 80%;
+}
+
+.chat .time {
+    color: gray;
+}
+
+.center {
+    text-align: center;
 }

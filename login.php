@@ -7,7 +7,7 @@ function checkPassword($email, $password)
 {
     global $dbc;
     $query = $dbc->prepare("SELECT * FROM user WHERE email = :email AND password = SHA2(:password,0)");
-    $query->bindvalue(":email", $email);
+    $query->bindValue(":email", $email);
     $query->bindValue(":password", $password);
     $query->execute();
     return $query->rowCount() > 0;
