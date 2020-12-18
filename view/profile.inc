@@ -21,7 +21,7 @@
         <div class="center-text">
             <ol>
                 <li>Email : <?php echo $_SESSION['email']; ?></li>
-                <li>Nama : <?php echo $_SESSION['nama']; ?></li>
+                <li>Nama : <?php echo $_SESSION['name']; ?></li>
                 <li>Bio : <?php echo $_SESSION['bio']; ?></li>
             </ol>
         </div>

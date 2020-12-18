@@ -20,7 +20,7 @@
                         <input type="text" class="inputan" name="name" id="name" placeholder="Name" value="<?php if (isset($_POST['name'])) {
                                                                                                                 echo htmlspecialchars($_POST['name']);
                                                                                                             } else {
-                                                                                                                echo htmlspecialchars($result[0]['nama']);
+                                                                                                                echo htmlspecialchars($result[0]['name']);
                                                                                                             } ?>">
                         <input type="hidden" name="id" id="id" value="<?php echo $_SESSION['id']; ?>">
                     </div>

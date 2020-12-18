@@ -21,7 +21,7 @@
         } else {
         ?>
             <div class="dropdown">
-                <button class="dropbtn"><?php echo $_SESSION['nama'] ?></button>
+                <button class="dropbtn"><?php echo $_SESSION['name'] ?></button>
                 <div class="dropdown-content">
                     <a href="profile.php">Profile</a>
                     <a href="edit_profile.php?id=<?php echo $_SESSION['id']; ?>">Edit Profile</a>

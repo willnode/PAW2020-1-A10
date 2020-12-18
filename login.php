@@ -26,7 +26,7 @@ if (isset($_POST['login'])) {
             foreach ($query as $row) {
                 $_SESSION['id'] = $row['user_id'];
                 $_SESSION['email'] = $row['email'];
-                $_SESSION['nama'] = $row['nama'];
+                $_SESSION['name'] = $row['name'];
                 $_SESSION['bio'] = $row['bio'];
                 $_SESSION['type'] = $row['type'];
             }
