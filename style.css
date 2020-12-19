@@ -83,6 +83,7 @@ li a:hover {
     display: block;
 }
 
+
 .dropdown-content a:hover {
     background-color: gray;
 }
@@ -194,7 +195,7 @@ input.inputan, select.inputan {
     width: fit-content;
 }
 
-img {
+.pp {
     width: 150px;
     height: 200px;
 }
@@ -231,4 +232,22 @@ span {
 
 .center {
     text-align: center;
+}
+.topik-item {
+  flex-direction: row;
+  display: flex;
+}
+.topik-item img{
+    height: 60px; 
+    margin-right: 5px;    
+}
+.topik-fram{
+    max-width:500px;
+    margin:auto;
+    text-align: center;
+
+}
+.topik-fram img{
+    height: 60px;
+    margin-right: 5px;
 }

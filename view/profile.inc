@@ -16,7 +16,7 @@
             <?php
             $image = "image/profile/" . $result[0];
             ?>
-            <img src="<?php echo $image ?>" alt="<?php echo $result[0]; ?>">
+            <img class="pp" src="<?php echo $image ?>" alt="<?php echo $result[0]; ?>">
         </div>
         <div class="center-text">
             <ol>
