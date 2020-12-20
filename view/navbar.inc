@@ -23,7 +23,7 @@
             <div class="dropdown">
                 <button class="dropbtn"><?php echo $_SESSION['name'] ?></button>
                 <div class="dropdown-content">
-                    <a href="profile.php">Profile</a>
+                    <a href="profile.php?id=<?php echo $_SESSION['id']; ?>">Profile</a>
                     <a href="edit_profile.php?id=<?php echo $_SESSION['id']; ?>">Edit Profile</a>
                     <a href="change_password.php?id=<?php echo $_SESSION['id']; ?>">Change Password</a>
                     <a href="logout.php">Logout</a>

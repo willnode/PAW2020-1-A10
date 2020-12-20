@@ -9,7 +9,7 @@ $nameErr =  $bioErr =  $passwordErr = $avatarErr =  "";
 if (isset($_POST['submit'])) {
     validateName($nameErr, $_POST, "name"); //validasi inputan name required, alphabet
     required($bioErr, $_POST, "bio"); //validasi bio
-    updateAvatar($avatarErr, 'avatar', $_FILES); //validasi avatar/profile image
+    validateAvatar($avatarErr, 'avatar', $_FILES); //validasi avatar/profile image
     //cek jika sudah tidak ada error
     if ($nameErr ==  "" && $bioErr == "" && $avatarErr == "") {
         $name = $_FILES['avatar']['name']; //mengambil name file

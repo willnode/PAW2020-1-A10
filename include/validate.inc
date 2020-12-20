@@ -78,10 +78,7 @@ function validateAvatar(&$error, $field_name, $images)
     $jenis_gambar = $images['avatar']['type']; //mengambil ekstensi file
     $ukuran = $images['avatar']['size']; //mengambil ukuran file
     $lokasi = $images['avatar']['tmp_name']; //mengambil direktori asal
-    // cek apakah field kosong
-    if (empty($name)) {
-        $error = " *" . $field_name . " is required";
-    } else {
+    if (!empty($name)) {
         //mengecek apakah format sesuai
         if ($jenis_gambar == "image/jpeg" || $jenis_gambar == "image/jpg" || $jenis_gambar == "image/png") {
             //mengecek ukuran apakah melebihi 5mb
@@ -95,6 +92,7 @@ function validateAvatar(&$error, $field_name, $images)
         }
     }
 }
+
 
 function ValidateEmailLog(&$error, $field_list, $field_name)
 {
@@ -120,26 +118,5 @@ function oldPassword(&$error, $field_list, $field_name, $old_pass)
         $error = "*Password didn't macth";
     } else {
         $error = "";
-    }
-}
-
-function updateAvatar(&$error, $field_name, $images)
-{
-    $name = $images['avatar']['name']; //mengambil nama file
-    $jenis_gambar = $images['avatar']['type']; //mengambil ekstensi file
-    $ukuran = $images['avatar']['size']; //mengambil ukuran file
-    $lokasi = $images['avatar']['tmp_name']; //mengambil direktori asal
-    if (!empty($name)) {
-        //mengecek apakah format sesuai
-        if ($jenis_gambar == "image/jpeg" || $jenis_gambar == "image/jpg" || $jenis_gambar == "image/png") {
-            //mengecek ukuran apakah melebihi 5mb
-            if ($ukuran <= 5000000) {
-                $error = "";
-            } else {
-                $error = " *File size is too large";
-            }
-        } else {
-            $error = " *The format file must be .jpg .jpeg .png";
-        }
     }
 }

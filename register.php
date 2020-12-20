@@ -14,7 +14,15 @@ if (isset($_POST['submit'])) {
     //cek jika sudah tidak ada error
     if ($nameErr == "" && $emailErr == "" && $passwordErr == "" && $confirmErr == "" && $bioErr == "" && $avatarErr == "") {
         $name = $_FILES['avatar']['name']; //mengambil nama file
-        $lokasi = $_FILES['avatar']['tmp_name']; //mengambil direktori asal
+        if (empty($name)) {
+            $name = "profile.png";
+        } else {
+            $lokasi = $_FILES['avatar']['tmp_name']; //mengambil direktori asal
+            move_uploaded_file(
+                $lokasi,
+                "image/profile/" . $name
+            );
+        }
         $statement = $dbc->prepare("INSERT INTO user (email, password, name, bio, avatar, type) VALUES (:email, SHA2(:password, 0), :name,:bio,:avatar, :type)");
         $statement->bindValue(':email', $_POST['email']);
         $statement->bindValue(':password', $_POST['password']);
@@ -23,7 +31,6 @@ if (isset($_POST['submit'])) {
         $statement->bindValue(":avatar", $name);
         $statement->bindValue(":type", $_POST['type']);
         $statement->execute();
-        move_uploaded_file($lokasi, "image/profile/" . $name);
         header("location:index.php");
     }
 }
