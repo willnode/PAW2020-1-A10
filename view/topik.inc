@@ -5,13 +5,13 @@
 <body>
     <?php include "navbar.inc"; ?>
     <div class="content">
-    	<div class ="topik-fram">
-    		<h1><img src="image/topik/<?= $topic ['topic_id']?>.png"><?= $topic ['title'] ?></h1>
-            <a href="thread.php?topic=<?= $topic ['topic_id'] ?>">Diskusi Baru</a>
+        <div class="topik-fram">
+            <h1><img src="image/topik/<?= $topic['topic_id'] ?>.png" alt="<?php echo $topic['topic_id'] ?>"><?= $topic['title'] ?></h1>
+            <a href="thread.php?topic=<?= $topic['topic_id'] ?>">Diskusi Baru</a>
             <?php foreach ($threads as $thread) : ?>
-            <a href ="thread.php?id=<?=$thread['thread_id'] ?>">  <?= $thread ['title'] ?></a>
+                <a href="thread.php?id=<?= $thread['thread_id'] ?>"> <?= $thread['title'] ?></a>
         </div>
-         	<?php endforeach ?>
+    <?php endforeach ?>
     </div>
     <?php include "footer.inc"; ?>
 </body>
