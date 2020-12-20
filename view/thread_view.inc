@@ -10,7 +10,7 @@
             <a href="topik.php?topik=<?= $thread['topic_id'] ?>">Kembali</a>
             <div class="chat">
                 <div class="bio">
-                    <a href="bio.php?id=<?= $thread['user_id'] ?>"><?= $thread['name'] ?></a>
+                    <a href="profile.php?id=<?= $thread['user_id'] ?>"><?= $thread['name'] ?></a>
                 </div>
                 <div class="content">
                     <?= $thread['question'] ?>
@@ -27,7 +27,7 @@
             <?php foreach ($answers as $answer) : ?>
                 <div class="chat">
                     <div class="bio">
-                        <a href="bio.php?id=<?= $answer['user_id'] ?>"><?= $answer['name'] ?></a>
+                        <a href="profile.php?id=<?= $answer['user_id'] ?>"><?= $answer['name'] ?></a>
                     </div>
                     <div class="content">
                         <?= $answer['answer'] ?>
