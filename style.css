@@ -1,5 +1,5 @@
 * {
-    box-sizing: border-box;
+    box-sizing: border-box; 
 }
 
 html, body {
@@ -109,7 +109,6 @@ li a:hover {
     margin-right: auto;
     width: fit-content;
 }
-
 .regisbox {
     width: 400px;
     height: 580px;
@@ -233,11 +232,11 @@ span {
 .center {
     text-align: center;
 }
-.topik-item {
+.topik-item{
   flex-direction: row;
   display: flex;
 }
-.topik-item img{
+.topik-item img, .topik-fram img{
     height: 60px; 
     margin-right: 5px;    
 }
@@ -247,7 +246,4 @@ span {
     text-align: center;
 
 }
-.topik-fram img{
-    height: 60px;
-    margin-right: 5px;
-}
+

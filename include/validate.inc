@@ -36,6 +36,7 @@ function ValidateEmail(&$error, $field_list, $field_name)
         // cek apakah email sesuai format
     } else if (!filter_var($field_list[$field_name], FILTER_VALIDATE_EMAIL)) {
         $error = " *invalid email address";
+        //cek apakah data yang diisikan belum pernah terdata 
     } else if ($query->rowCount() > 0) {
         $error = " *Email already exist";
     } else {

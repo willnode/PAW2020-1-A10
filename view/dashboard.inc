@@ -15,11 +15,10 @@
 				<img src="image/topik/<?= $data ['topic_id']?>.png">
 				<div><a href="topik.php?topik=<?= $data['topic_id'] ?>">
 					<?= $data['title'] ?></a>
-					<p> <?= $data ['description'] ?></p>
+					<p><?= $data ['description'] ?></p>
 				</div>
 			</div>
 		<?php
-
 		endforeach
 		?> 
 	</div>

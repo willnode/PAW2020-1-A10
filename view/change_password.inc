@@ -1,9 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<?php include "head.inc" ?>
+<!DOCTYPE html> <!--menandakan html versi 5 (tipe)-->
+<html lang="en"> <!--html : untuk membuat dokumen html, lang : untuk menyatakan bahasa halaman web-->
+<?php include "head.inc" ?> <!--menyisipkan halaman head.inc-->
 
 <body>
-    <?php include "navbar.inc"; ?>
+    <?php include "navbar.inc"; ?> <!--menyisipkan halaman navbar.inc-->
     <?php
     $query = $dbc->prepare("SELECT * FROM user WHERE user_id=:id");
     $query->bindValue(":id", $_GET['id']);
@@ -14,6 +14,7 @@
         <div class="regisbox">
             <h1>Change Password</h1>
             <div class="form">
+                <!--membuat form pengisian data untuk change password-->
                 <form action="change_password.php" method="POST" class="login">
                     <div class="field">
                         <label for="old_password">Old Password</label> <span><?php echo $oldPassErr ?></span>
@@ -33,10 +34,11 @@
                         <input type="submit" class="logbutton" value="Submit" name="submit" id="submit">
                     </div>
                 </form>
+                <!--form end-->
             </div>
         </div>
     </div>
-    <?php include "footer.inc"; ?>
+    <?php include "footer.inc"; ?> <!--menysipkan file footer.inc-->
 </body>
 
 </html>

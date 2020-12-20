@@ -39,6 +39,7 @@
                             <label for="submit">&nbsp;</label>
                             <input type="submit" class="logbutton" value="Submit" name="submit" id="submit">
                         </div>
+                    </div>
                 </form>
             </div>
         </div>
