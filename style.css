@@ -1,5 +1,5 @@
 * {
-    box-sizing: border-box; 
+    box-sizing: border-box;
 }
 
 html, body {
@@ -83,7 +83,6 @@ li a:hover {
     display: block;
 }
 
-
 .dropdown-content a:hover {
     background-color: gray;
 }
@@ -109,6 +108,7 @@ li a:hover {
     margin-right: auto;
     width: fit-content;
 }
+
 .regisbox {
     width: 400px;
     height: 580px;
@@ -232,18 +232,33 @@ span {
 .center {
     text-align: center;
 }
-.topik-item{
-  flex-direction: row;
-  display: flex;
+
+.topik-item {
+    flex-direction: row;
+    display: flex;
 }
-.topik-item img, .topik-fram img{
-    height: 60px; 
-    margin-right: 5px;    
+
+.topik-item img, .topik-fram img {
+    height: 60px;
+    margin-right: 5px;
 }
-.topik-fram{
-    max-width:500px;
-    margin:auto;
+
+.topik-fram {
+    max-width: 500px;
+    margin: auto;
     text-align: center;
-
 }
 
+.left-text {
+    text-align: left;
+    float: left;
+}
+
+.right-text {
+    float: right;
+    text-align: left;
+}
+
+.right-text ol li {
+    list-style: decimal;
+}

@@ -27,10 +27,10 @@ function validateName(&$error, $field_list, $field_name)
 function ValidateEmail(&$error, $field_list, $field_name)
 {
     include "koneksi.inc";
-    // cek apakah field kosong
     $query = $dbc->prepare("SELECT * FROM user WHERE email=:email");
     $query->bindValue(":email", $field_list[$field_name]);
     $query->execute();
+    // cek apakah field kosong
     if (empty($field_list[$field_name])) {
         $error = " *email is required!";
         // cek apakah email sesuai format
@@ -89,6 +89,7 @@ function validateAvatar(&$error, $field_name, $images)
                 $error = " *File size is too large";
             }
         } else {
+            //mengecek apakah format gambar sesuai
             $error = " *The format file must be .jpg .jpeg .png";
         }
     }
