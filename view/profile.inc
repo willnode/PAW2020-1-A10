@@ -28,29 +28,23 @@
         <div class="right-text">
             <ol>
                 <?php
-                //cek jenis user
-                if ($_SESSION['type'] == "expert") {
-                    $query = $dbc->prepare("SELECT * FROM answer,thread,topic WHERE answer.thread_id=thread.thread_id AND topic.topic_id=thread.topic_id AND answer.user_id=:id");
-                    $query->bindValue(":id", $_SESSION['id']);
+                //cek tipe user
+                if ($_SESSION['id'] == $_GET['id']) {
+                    $query = $dbc->prepare("SELECT thread.thread_id,thread.title,answer.time as time FROM answer,thread,topic WHERE answer.thread_id=thread.thread_id AND topic.topic_id=thread.topic_id AND answer.user_id=:id GROUP BY thread_id");
+                    $query->bindValue(":id", $_GET['id']);
                     $query->execute();
                 } else {
-                    $query = $dbc->prepare("SELECT * FROM thread,topic WHERE topic.topic_id=thread.topic_id AND thread.user_id=:id");
-                    $query->bindValue(":id", $_SESSION['id']);
+                    $query = $dbc->prepare("SELECT thread_id,thread.title,time FROM thread,topic WHERE topic.topic_id=thread.topic_id AND thread.user_id=:id GROUP BY thread_id");
+                    $query->bindValue(":id", $_GET['id']);
                     $query->execute();
                 }
                 ?>
                 <?php
                 //menampilkan hasil query
                 foreach ($query as $row) {
-                    if ($_SESSION['type'] == "expert") {
                 ?>
-                        <li><a href="thread.php?id=<?php echo $row['thread_id']; ?>"><?php echo $row['answer'] . " " . $row['time'] . " "; ?></a></li>
-                    <?php
-                    } else {
-                    ?>
-                        <li><a href="thread.php?id=<?php echo $row['thread_id']; ?>"><?php echo $row['title'] . " " . $row['time'] . " "; ?></a></li>
+                    <li><a href="thread.php?id=<?php echo $row['thread_id']; ?>"><?php echo $row['title'] . " " . $row['time']; ?></a></li>
                 <?php
-                    }
                 }
                 ?>
             </ol>
