@@ -6,17 +6,17 @@
     <?php include "navbar.inc"; ?>
     <div class="content">
         <div class="regisbox">
-            <h1><?= $thread['title'] ?></h1>
-            <a href="topik.php?topik=<?= $thread['topic_id'] ?>">Kembali</a>
+            <h1><?php echo $thread['title'] ?></h1>
+            <a href="topik.php?topik=<?php echo $thread['topic_id'] ?>">Kembali</a>
             <div class="chat">
                 <div class="bio">
-                    <a href="profile.php?id=<?= $thread['user_id'] ?>"><?= $thread['name'] ?></a>
+                    <a href="profile.php?id=<?php echo $thread['user_id'] ?>"><?php echo $thread['name'] ?></a>
                 </div>
                 <div class="content">
-                    <?= $thread['question'] ?>
-                    <div class="time"><?= $thread['time'] ?></div>
+                    <?php echo $thread['question'] ?>
+                    <div class="time"><?php echo $thread['time'] ?></div>
                     <?php if ($thread['user_id'] == $_SESSION['id']) : ?>
-                        <a href="thread_edit.php?thread_id=<?= $thread['thread_id'] ?>">Edit</a>
+                        <a href="thread_edit.php?thread_id=<?php echo $thread['thread_id'] ?>">Edit</a>
                     <?php endif ?>
                 </div>
             </div>
@@ -27,13 +27,13 @@
             <?php foreach ($answers as $answer) : ?>
                 <div class="chat">
                     <div class="bio">
-                        <a href="profile.php?id=<?= $answer['user_id'] ?>"><?= $answer['name'] ?></a>
+                        <a href="profile.php?id=<?php echo $answer['user_id'] ?>"><?php echo $answer['name'] ?></a>
                     </div>
                     <div class="content">
-                        <?= $answer['answer'] ?>
-                        <div class="time"><?= $answer['time'] ?></div>
+                        <?php echo $answer['answer'] ?>
+                        <div class="time"><?php echo $answer['time'] ?></div>
                         <?php if ($answer['user_id'] == $_SESSION['id']) : ?>
-                            <a href="thread_edit.php?answer_id=<?= $answer['answer_id'] ?>">Edit</a>
+                            <a href="thread_edit.php?answer_id=<?php echo $answer['answer_id'] ?>">Edit</a>
                         <?php endif ?>
                     </div>
                 </div>

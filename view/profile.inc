@@ -10,19 +10,19 @@
         $query = $dbc->prepare("SELECT * FROM user WHERE user_id=:id");
         $query->bindValue(":id", $_GET['id']);
         $query->execute();
-        $result = $query->fetchAll(PDO::FETCH_ASSOC);
+        $result = $query->fetch(PDO::FETCH_ASSOC);
         ?>
         <div class="center">
             <?php
-            $image = "image/profile/" . $result[0]['avatar'];
+            $image = "image/profile/" . $result['avatar'];
             ?>
-            <img class="pp" src="<?php echo $image ?>" alt="<?php echo $result[0]['avatar']; ?>">
+            <img class="pp" src="<?php echo $image ?>" alt="<?php echo $result['avatar']; ?>">
         </div>
         <div class="left-text">
             <ol>
-                <li>Email : <?php echo $result[0]['email']; ?></li>
-                <li>Nama : <?php echo $result[0]['name']; ?></li>
-                <li>Bio : <?php echo $result[0]['bio']; ?></li>
+                <li>Email : <?php echo $result['email']; ?></li>
+                <li>Nama : <?php echo $result['name']; ?></li>
+                <li>Bio : <?php echo $result['bio']; ?></li>
             </ol>
         </div>
         <div class="right-text">

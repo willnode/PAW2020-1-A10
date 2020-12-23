@@ -8,7 +8,7 @@
     $query = $dbc->prepare("SELECT * FROM user WHERE user_id=:id");
     $query->bindValue(":id", $_GET['id']);
     $query->execute();
-    $result = $query->fetchAll(PDO::FETCH_ASSOC);
+    $result = $query->fetch(PDO::FETCH_ASSOC);
     ?>
     <div class="content">
         <div class="regisbox">
@@ -20,7 +20,7 @@
                         <input type="text" class="inputan" name="name" id="name" placeholder="Name" value="<?php if (isset($_POST['name'])) {
                                                                                                                 echo htmlspecialchars($_POST['name']);
                                                                                                             } else {
-                                                                                                                echo htmlspecialchars($result[0]['name']);
+                                                                                                                echo htmlspecialchars($result['name']);
                                                                                                             } ?>">
                         <input type="hidden" name="id" id="id" value="<?php echo $_SESSION['id']; ?>">
                     </div>
@@ -29,7 +29,7 @@
                         <input type="text" class="inputan" name="bio" id="bio" placeholder="Bio" value="<?php if (isset($_POST['bio'])) {
                                                                                                             echo htmlspecialchars($_POST['bio']);
                                                                                                         } else {
-                                                                                                            echo htmlspecialchars($result[0]['bio']);
+                                                                                                            echo htmlspecialchars($result['bio']);
                                                                                                         } ?>">
                     </div>
                     <div class="field">

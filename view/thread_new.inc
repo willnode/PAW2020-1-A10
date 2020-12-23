@@ -16,7 +16,7 @@
                     <label for="topic">Topik</label> <span><?php echo $topicErr ?></span>
                     <select name="topic" class="inputan">
                         <?php foreach ($topics as $titem) : ?>
-                            <option <?= ($_GET['topic'] ?? '') == $titem['topic_id'] ? 'selected' : '' ?> value="<?= $titem['topic_id'] ?>"><?= $titem['title'] ?></option>
+                            <option <?php echo ($_GET['topic'] ?? '') == $titem['topic_id'] ? 'selected' : '' ?> value="<?php echo $titem['topic_id'] ?>"><?php echo $titem['title'] ?></option>
                         <?php endforeach ?>
                     </select>
                 </div>
