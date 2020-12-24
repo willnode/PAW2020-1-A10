@@ -10,20 +10,29 @@
             <form method="POST">
                 <div class="field">
                     <label for="title">Judul</label> <span><?php echo $titleErr ?></span>
-                    <input name="title" class="inputan" placeholder="Pertanyaan Singkat">
+                    <input name="title" value="<?php if (isset($_POST['title'])) {
+                                                    echo htmlspecialchars($_POST['title']);
+                                                } else {
+                                                    echo htmlspecialchars($thread['title']);
+                                                } ?>" class="inputan" placeholder="Pertanyaan Singkat">
                 </div>
                 <div class="field">
                     <label for="topic">Topik</label> <span><?php echo $topicErr ?></span>
                     <select name="topic" class="inputan">
-                        <?php foreach ($topics as $titem) : ?>
-                            <option <?php echo ($_GET['topic'] ?? '') == $titem['topic_id'] ? 'selected' : '' ?> value="<?php echo $titem['topic_id'] ?>"><?php echo $titem['title'] ?></option>
+                        <?php foreach ($topics as $topic) : ?>
+                            <option <?php echo $thread['topic_id'] == $topic['topic_id'] ? 'selected' : '' ?> value="<?php echo $topic['topic_id'] ?>"><?php echo $topic['title'] ?></option>
                         <?php endforeach ?>
                     </select>
                 </div>
                 <div class="field">
-                    <label for="title">Deskripsi</label> <span><?php echo $questionErr ?></span>
-                    <textarea name="question" class="inputan" id="question" placeholder="Penjelasan Panjang" cols="30" rows="10"></textarea>
+                    <label for="question">Deskripsi</label> <span><?php echo $questionErr ?></span>
+                    <textarea name="question" class="inputan" id="question" placeholder="Penjelasan Panjang" cols="30" rows="10"><?php if (isset($_POST['question'])) {
+                                                                                                                                        echo htmlspecialchars($_POST['question']);
+                                                                                                                                    } else {
+                                                                                                                                        echo htmlspecialchars($thread['question']);
+                                                                                                                                    } ?></textarea>
                 </div>
+
                 <div><input type="submit" class="logbutton" value="Submit" name="submit" id="submit"></div>
             </form>
         </div>
