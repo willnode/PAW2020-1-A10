@@ -16,7 +16,7 @@
                     <?php echo $thread['question'] ?>
                     <div class="time"><?php echo $thread['time'] ?></div>
                     <?php if ($thread['user_id'] == $_SESSION['id']) : ?>
-                        <a href="thread_edit.php?thread_id=<?php echo $thread['thread_id'] ?>">Edit</a>
+                        <a href="thread_post.php?id=<?php echo $thread['thread_id'] ?>">Edit</a>
                     <?php endif ?>
                 </div>
             </div>
