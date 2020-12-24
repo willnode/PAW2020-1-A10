@@ -1,4 +1,7 @@
 <?php
+
+// Halaman User Ganti Password
+
 //menyisipkan file .inc
 require 'include/adminPermission.inc';
 include "include/koneksi.inc";

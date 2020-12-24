@@ -1,5 +1,7 @@
 <?php
-//menyisipkan file .inc
+
+// Halaman Register
+
 require_once "include/koneksi.inc";
 require_once "include/validate.inc";
 
@@ -16,7 +18,7 @@ if (isset($_POST['submit'])) {
     if ($nameErr == "" && $emailErr == "" && $passwordErr == "" && $confirmErr == "" && $bioErr == "" && $avatarErr == "") {
         $name = $_FILES['avatar']['name']; //mengambil nama file
         //cek apakah data nama kosong atau tidak
-        if (empty($name)) { 
+        if (empty($name)) {
             $name = "profile.png";
         } else {
             $lokasi = $_FILES['avatar']['tmp_name']; //mengambil direktori asal
@@ -35,7 +37,7 @@ if (isset($_POST['submit'])) {
         $statement->bindValue(":avatar", $name);
         $statement->bindValue(":type", $_POST['type']);
         $statement->execute(); //menjalankan query
-        header("location:index.php"); //akan diarahkan ke halaman index.php 
+        header("location:index.php"); //akan diarahkan ke halaman index.php
     }
 }
 

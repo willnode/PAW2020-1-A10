@@ -1,16 +1,18 @@
 <?php
-//menyisipkan file .inc
+
+// Halaman Login
+
 include "include/koneksi.inc";
 include "include/validate.inc";
 
-function checkPassword($email, $password) 
+function checkPassword($email, $password)
 {
-    global $dbc; //penggunaan global variabel 
+    global $dbc; //penggunaan global variabel
     $query = $dbc->prepare("SELECT * FROM user WHERE email = :email AND password = SHA2(:password,0)"); //menyiapkan quert select pada kolom user
-    $query->bindValue(":email", $email); 
+    $query->bindValue(":email", $email);
     $query->bindValue(":password", $password);
     $query->execute(); //query dijalankan
-    return $query->rowCount() > 0; 
+    return $query->rowCount() > 0;
 }
 $error = "";
 $emailErr = $passErr = ""; //deklarasi variabel validasi inputan login
@@ -19,13 +21,13 @@ if (isset($_POST['login'])) {
     required($passErr, $_POST, 'password'); //validasi password
     //cek jika sudah tidak ada error
     if ($emailErr == "" && $passErr == "") {
-        //cek data email dan password sudah 
-        if (checkPassword($_POST["email"], $_POST['password'])) { 
+        //cek data email dan password sudah
+        if (checkPassword($_POST["email"], $_POST['password'])) {
             session_start(); //memulai session pada server
             $query = $dbc->prepare("SELECT * FROM user WHERE email=:email"); //menyiapkan query select pada tabel user
             $query->bindValue(":email", $_POST['email']); //menghubungkan data dengan variabel
             $query->execute(); //query dijalankan
-            //perulangan 
+            //perulangan
             foreach ($query as $row) {
                 $_SESSION['id'] = $row['user_id'];
                 $_SESSION['email'] = $row['email'];

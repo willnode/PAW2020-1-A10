@@ -1,5 +1,7 @@
 <?php
-//menyisipkan file .inc
+
+// Halaman profil tiap user
+
 require 'include/adminPermission.inc';
 include "include/koneksi.inc";
 include "view/profile.inc";

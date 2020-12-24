@@ -1,3 +1,5 @@
 <?php
-//menyisipkan file beranda.inc pada folder view
+
+// Halaman Beranda sebelum login (statis)
+
 include "view/beranda.inc";

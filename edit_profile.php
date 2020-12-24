@@ -1,5 +1,7 @@
 <?php
 
+// Halaman User Ganti Profil Mereka Sendiri
+
 require 'include/adminPermission.inc';
 include "include/koneksi.inc";
 include "include/validate.inc";
@@ -31,7 +33,7 @@ if (isset($_POST['submit'])) {
         //menjalankan session
         $_SESSION['name'] = $_POST['name'];
         $_SESSION['bio'] = $_POST['bio'];
-        header("location:index.php"); //akan diarahkan ke halaman index.php 
+        header("location:index.php"); //akan diarahkan ke halaman index.php
     }
 }
 include "view/edit_profile.inc"; //include file edit_profile.inc pada volder view
