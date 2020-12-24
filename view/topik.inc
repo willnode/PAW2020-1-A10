@@ -9,10 +9,13 @@
             <h1><img src="image/topik/<?php echo $topic['topic_id'] ?>.png" alt="<?php echo $topic['topic_id'] ?>"><?php echo $topic['title'] ?></h1>
             <a href="thread.php?topic=<?php echo $topic['topic_id'] ?>">Diskusi Baru</a>
             <?php foreach ($threads as $thread) : ?>
-                <a href="thread.php?id=<?php echo $thread['thread_id'] ?>"> <?php echo $thread['title'] ?></a>
-        </div>
+            <div class="thread-item">
+               <a href="thread.php?id=<?php echo $thread['thread_id'] ?>"> <?php echo $thread['title'] ?></a><br>
+               <span class="thread-time"><?php echo $thread ["time"] ?></span>
+            </div>
     <?php endforeach ?>
     </div>
+</div>
     <?php include "footer.inc"; ?>
 </body>
 

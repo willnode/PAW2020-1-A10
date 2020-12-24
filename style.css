@@ -262,3 +262,12 @@ span {
 .right-text ol li {
     list-style: decimal;
 }
+.thread-item {
+    border:1px solid black;
+    padding: 3px;
+}
+.thread-time {
+    font-size: 0.8em;
+    color: gray;
+
+}
