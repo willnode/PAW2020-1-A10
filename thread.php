@@ -3,7 +3,7 @@
 // Menampilkan thread atau memposting jawaban expert
 
 include "include/koneksi.inc";
-
+include "include/validate.inc";
 if ($_GET['id']) {
     if ($_POST) {
         required($answerErr, $_POST, 'answer');

@@ -22,7 +22,7 @@ if (isset($_GET['answer_id'])) {
         $query->bindValue(":answer", $id);
         $query->bindValue(":text", $_POST['answer']);
         $query->execute();
-        header("Location: $answer[thread_id]");
+        header("Location: thread.php?id=$answer[thread_id]");
     }
 
     include "view/thread_edit.inc";
