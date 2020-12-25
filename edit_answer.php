@@ -25,5 +25,5 @@ if (isset($_GET['answer_id'])) {
         header("Location: thread.php?id=$answer[thread_id]");
     }
 
-    include "view/thread_edit.inc";
+    include "view/edit_answer.inc";
 }

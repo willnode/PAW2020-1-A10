@@ -111,7 +111,7 @@ li a:hover {
 
 .regisbox {
     width: 400px;
-    height: 580px;
+    min-height: 580px;
     border: 1px solid #d2d2d2;
     border-radius: 5px;
     margin: 60px auto;
@@ -181,6 +181,13 @@ input.inputan, select.inputan {
     border: none;
     color: white;
     font-size: 20px;
+}
+
+a.logbutton {
+    display: block;
+    width: inherit;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 #log-err {

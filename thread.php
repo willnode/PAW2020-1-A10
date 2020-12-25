@@ -2,6 +2,7 @@
 
 // Menampilkan thread atau memposting jawaban expert
 
+include "include/adminPermission.inc";
 include "include/koneksi.inc";
 include "include/validate.inc";
 if ($_GET['id']) {

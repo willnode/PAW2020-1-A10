@@ -33,17 +33,19 @@
                         <?php echo $answer['answer'] ?>
                         <div class="time"><?php echo $answer['time'] ?></div>
                         <?php if ($answer['user_id'] == $_SESSION['id']) : ?>
-                            <a href="thread_edit.php?answer_id=<?php echo $answer['answer_id'] ?>">Edit</a>
+                            <a href="edit_answer.php?answer_id=<?php echo $answer['answer_id'] ?>">Edit</a>
                         <?php endif ?>
                     </div>
                 </div>
             <?php endforeach ?>
             <hr>
+            <?php if ($_SESSION['type'] == 'expert') : ?>
             <form method="post">
                 <label for="answer">Jawaban Anda:</label>
                 <textarea name="answer" id="answer" class="inputan" rows="10"></textarea>
                 <input type="submit" value="Posting Jawaban">
             </form>
+            <?php endif ?>
         </div>
 
     </div>

@@ -6,7 +6,7 @@
     <?php include "navbar.inc"; ?>
     <div class="content">
         <div class="regisbox">
-            <h1>Edit Diskusi</h1>
+            <h1>Edit Jawaban</h1>
             <form method="POST">
                     <div class="field">
                         <label for="title">Deskripsi</label> <span><?php echo $answerErr ?></span>
