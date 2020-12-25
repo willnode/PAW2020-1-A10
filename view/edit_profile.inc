@@ -6,7 +6,7 @@
     <?php include "navbar.inc"; ?>
     <?php
     $query = $dbc->prepare("SELECT * FROM user WHERE user_id=:id");
-    $query->bindValue(":id", $_GET['id']);
+    $query->bindValue(":id", $_SESSION['id']);
     $query->execute();
     $result = $query->fetch(PDO::FETCH_ASSOC);
     ?>
