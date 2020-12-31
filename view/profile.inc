@@ -30,9 +30,15 @@
                 <?php
                 //cek tipe user
                 if ($_SESSION['id'] == $_GET['id']) {
-                    $query = $dbc->prepare("SELECT thread.thread_id,thread.title,answer.time as time FROM answer,thread,topic WHERE answer.thread_id=thread.thread_id AND topic.topic_id=thread.topic_id AND answer.user_id=:id GROUP BY thread_id");
-                    $query->bindValue(":id", $_GET['id']);
-                    $query->execute();
+                    if ($_SESSION['type'] == "expert") {
+                        $query = $dbc->prepare("SELECT thread.thread_id,thread.title,answer.time as time FROM answer,thread,topic WHERE answer.thread_id=thread.thread_id AND topic.topic_id=thread.topic_id AND answer.user_id=:id GROUP BY thread_id");
+                        $query->bindValue(":id", $_GET['id']);
+                        $query->execute();
+                    } else {
+                        $query = $dbc->prepare("SELECT thread_id,thread.title,time FROM thread,topic WHERE topic.topic_id=thread.topic_id AND thread.user_id=:id GROUP BY thread_id");
+                        $query->bindValue(":id", $_GET['id']);
+                        $query->execute();
+                    }
                 } else {
                     $query = $dbc->prepare("SELECT thread_id,thread.title,time FROM thread,topic WHERE topic.topic_id=thread.topic_id AND thread.user_id=:id GROUP BY thread_id");
                     $query->bindValue(":id", $_GET['id']);
