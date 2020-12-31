@@ -84,7 +84,7 @@ CREATE TABLE `topic` (
 INSERT INTO `topic` (`topic_id`, `title`, `description`) VALUES
 (1, 'Rakitan', 'Informasi Merakit PC'),
 (2, 'Prosesor', 'Informasi Seputar CPU'),
-(3, 'Motherboard', 'Rekomdasi Motherboard untuk PC'),
+(3, 'Motherboard', 'Rekomendasi Motherboard untuk PC'),
 (4, 'Kartu Grafis', 'Komponen Kartu Grafis untuk PC'),
 (5, 'Penyimpanan', 'Informasi Media Penyimpanan pada PC'),
 (6, 'Aksesoris', 'Komponen-Komponen pada PC');

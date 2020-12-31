@@ -27,6 +27,7 @@
             <?php foreach ($answers as $answer) : ?>
                 <div class="chat">
                     <div class="bio">
+                        <img src="image/profile/<?php echo $answer['avatar'] ?>" class="profile" alt="">
                         <a href="profile.php?id=<?php echo $answer['user_id'] ?>"><?php echo $answer['name'] ?></a>
                     </div>
                     <div class="content">

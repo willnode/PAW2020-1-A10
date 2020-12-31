@@ -30,6 +30,7 @@ ol li {
     text-align: center;
     border: 1px solid #555;
     display: inline;
+    background: white;
 }
 
 .left-bar li {
@@ -101,6 +102,8 @@ li a:hover {
     margin: auto;
     padding: 0 16px;
     background-color: #f9f9f9;
+    background: url(image/logo/background.jpg);
+    background-size: 200px;
 }
 
 .center-text {
@@ -115,6 +118,7 @@ li a:hover {
     border: 1px solid #d2d2d2;
     border-radius: 5px;
     margin: 60px auto;
+    background: white;
 }
 
 .regisbox h1 {
@@ -202,8 +206,7 @@ a.logbutton {
 }
 
 .pp {
-    width: 150px;
-    height: 200px;
+    width: 200px;
 }
 
 .footer {
@@ -254,6 +257,9 @@ span {
     max-width: 500px;
     margin: auto;
     text-align: center;
+    padding: 10px;
+    background: white;
+    min-height: 80vh;
 }
 
 .left-text {
@@ -277,4 +283,15 @@ span {
     font-size: 0.8em;
     color: gray;
 
+}
+
+.chat .profile {
+    max-width: 40px;
+    width: initial;
+    margin: auto;
+}
+.home-logo {
+    max-width: 80%;
+    margin: auto;
+    display: block;
 }

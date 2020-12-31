@@ -6,6 +6,7 @@
     <?php include "navbar.inc"; ?><!--menyisipkan file navbar.inc-->
     <div class="content"> <!--div sebagai kontainer dengan class content-->
         <h1 class="center-text">Welcome To Symposium Hardware</h1><!--tag h1 untuk mencetak tulisan bold dan setara dengan 24pt-->
+        <img src="image/logo/logo.png" class="home-logo" alt="logo">
     </div>
     <?php include "footer.inc"; ?> <!---menyisipkan file footer.inc-->
 </body>
