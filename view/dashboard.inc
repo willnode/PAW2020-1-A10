@@ -8,6 +8,7 @@
 		<div class="regisbox">
 			<h1 class="center-text">Dashboard</h1>
 			<?php
+			//mengambil seluruh topic yang ada
 			$statement = $dbc->query("SELECT * from topic");
 			foreach ($statement as $data) :
 			?>

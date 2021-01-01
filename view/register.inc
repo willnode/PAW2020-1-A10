@@ -8,6 +8,7 @@
         <div class="regisbox">
             <h1>Register</h1>
             <div class="form">
+                <!-- Form register -->
                 <form action="register.php" method="POST" class="login" enctype="multipart/form-data">
                     <div class="field">
                         <label for="name">Name</label> <span><?php echo $nameErr ?></span>
@@ -27,7 +28,7 @@
                     </div>
                     <div class="field">
                         <label for="bio">Bio</label> <span><?php echo $bioErr ?></span>
-                        <input type="text" class="inputan" name="bio" id="bio" placeholder="Bio" value="<?php if (isset($_POST['bio'])) echo htmlspecialchars($_POST['bio']) ?>">
+                        <textarea name="bio" class="inputan" id="bio" placeholder="Bio" cols="30" rows="2"><?php if (isset($_POST['bio'])) echo htmlspecialchars($_POST['bio']) ?></textarea>
                     </div>
                     <div class="field">
                         <label for="type">Type</label>

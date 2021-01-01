@@ -5,6 +5,7 @@
 <body>
     <?php include "navbar.inc"; ?>
     <?php
+    // mengambil informasi user sesuai dengan session id
     $query = $dbc->prepare("SELECT * FROM user WHERE user_id=:id");
     $query->bindValue(":id", $_SESSION['id']);
     $query->execute();
@@ -14,6 +15,7 @@
         <div class="regisbox">
             <h1>Edit Profile</h1>
             <div class="form">
+                <!-- form untuk mengedit informasi profile -->
                 <form action="edit_profile.php" method="POST" class="login" enctype="multipart/form-data">
                     <div class="field">
                         <label for="name">Name</label> <span><?php echo $nameErr ?></span>

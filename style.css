@@ -275,14 +275,15 @@ span {
 .right-text ol li {
     list-style: decimal;
 }
+
 .thread-item {
-    border:1px solid black;
+    border: 1px solid black;
     padding: 3px;
 }
+
 .thread-time {
     font-size: 0.8em;
     color: gray;
-
 }
 
 .chat .profile {
@@ -290,6 +291,7 @@ span {
     width: initial;
     margin: auto;
 }
+
 .home-logo {
     max-width: 80%;
     margin: auto;

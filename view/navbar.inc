@@ -11,7 +11,7 @@
             session_start();
         }
         //cek session aktif
-        if (!isset($_SESSION['type'])) {
+        if (!isset($_SESSION['email'])) {
         ?>
             <ol>
                 <li><a href="login.php">Login</a></li>

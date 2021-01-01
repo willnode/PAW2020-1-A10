@@ -10,6 +10,7 @@
             <a href="topik.php?topik=<?php echo $thread['topic_id'] ?>">Kembali</a>
             <div class="chat">
                 <div class="bio">
+                    <img src="image/profile/<?php echo $thread['avatar'] ?>" class="profile" alt="<?php echo $thread['avatar'] ?>">
                     <a href="profile.php?id=<?php echo $thread['user_id'] ?>"><?php echo $thread['name'] ?></a>
                 </div>
                 <div class="content">
@@ -27,7 +28,7 @@
             <?php foreach ($answers as $answer) : ?>
                 <div class="chat">
                     <div class="bio">
-                        <img src="image/profile/<?php echo $answer['avatar'] ?>" class="profile" alt="">
+                        <img src="image/profile/<?php echo $answer['avatar'] ?>" class="profile" alt="<?php echo $answer['avatar'] ?>">
                         <a href="profile.php?id=<?php echo $answer['user_id'] ?>"><?php echo $answer['name'] ?></a>
                     </div>
                     <div class="content">
@@ -41,11 +42,11 @@
             <?php endforeach ?>
             <hr>
             <?php if ($_SESSION['type'] == 'expert') : ?>
-            <form method="post">
-                <label for="answer">Jawaban Anda:</label>
-                <textarea name="answer" id="answer" class="inputan" rows="10"></textarea>
-                <input type="submit" value="Posting Jawaban">
-            </form>
+                <form method="post">
+                    <label for="answer">Jawaban Anda:</label>
+                    <textarea name="answer" id="answer" class="inputan" rows="10"></textarea>
+                    <input type="submit" value="Posting Jawaban">
+                </form>
             <?php endif ?>
         </div>
 
