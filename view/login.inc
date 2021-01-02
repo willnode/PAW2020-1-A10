@@ -13,11 +13,11 @@
                 <form action="login.php" method="POST" class="login">
                     <div class="field">
                         <label for="email">Email</label><span><?php echo $emailErr ?></span>
-                        <input type="text" class="inputan" name="email" id="email" placeholder="email" value="<?php if (isset($_POST['email'])) echo htmlspecialchars($_POST['email']) ?>">
+                        <input type="text" class="inputan" name="email" id="email" placeholder="Email" value="<?php if (isset($_POST['email'])) echo htmlspecialchars($_POST['email']) ?>">
                     </div>
                     <div class="field">
                         <label for="password">Password</label><span><?php echo $passErr ?></span>
-                        <input type="password" class="inputan" id="password" name="password" placeholder="password" value="<?php if (isset($_POST['password'])) echo htmlspecialchars($_POST['password']) ?>">
+                        <input type="password" class="inputan" id="password" name="password" placeholder="Password" value="<?php if (isset($_POST['password'])) echo htmlspecialchars($_POST['password']) ?>">
                     </div>
                     <div class="field">
                         <label for="login">&nbsp;</label>

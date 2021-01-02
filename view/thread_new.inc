@@ -5,7 +5,7 @@
 <body>
     <?php include "navbar.inc"; ?>
     <div class="content">
-        <div class="regisbox">
+        <div class="containerbox">
             <h1>Diskusi Baru</h1>
             <form method="POST">
                 <div class="field">

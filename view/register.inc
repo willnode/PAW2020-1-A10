@@ -5,7 +5,7 @@
 <body>
     <?php include "navbar.inc"; ?>
     <div class="content">
-        <div class="regisbox">
+        <div class="containerbox">
             <h1>Register</h1>
             <div class="form">
                 <!-- Form register -->

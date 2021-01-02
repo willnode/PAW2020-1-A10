@@ -12,14 +12,14 @@
     $result = $query->fetch(PDO::FETCH_ASSOC);
     ?>
     <div class="content">
-        <div class="regisbox">
-            <h1>Edit Profile</h1>
+        <div class="containerbox">
+            <h1>Edit Profil</h1>
             <div class="form">
                 <!-- form untuk mengedit informasi profile -->
                 <form action="edit_profile.php" method="POST" class="login" enctype="multipart/form-data">
                     <div class="field">
-                        <label for="name">Name</label> <span><?php echo $nameErr ?></span>
-                        <input type="text" class="inputan" name="name" id="name" placeholder="Name" value="<?php if (isset($_POST['name'])) {
+                        <label for="name">Nama</label> <span><?php echo $nameErr ?></span>
+                        <input type="text" class="inputan" name="name" id="name" placeholder="Nama" value="<?php if (isset($_POST['name'])) {
                                                                                                                 echo htmlspecialchars($_POST['name']);
                                                                                                             } else {
                                                                                                                 echo htmlspecialchars($result['name']);
@@ -28,11 +28,11 @@
                     </div>
                     <div class="field">
                         <label for="bio">Bio</label> <span><?php echo $bioErr ?></span>
-                        <input type="text" class="inputan" name="bio" id="bio" placeholder="Bio" value="<?php if (isset($_POST['bio'])) {
-                                                                                                            echo htmlspecialchars($_POST['bio']);
-                                                                                                        } else {
-                                                                                                            echo htmlspecialchars($result['bio']);
-                                                                                                        } ?>">
+                        <input type="text" class="inputan" name="bio" id="bio" placeholder="Bio Singkat" value="<?php if (isset($_POST['bio'])) {
+                                                                                                                    echo htmlspecialchars($_POST['bio']);
+                                                                                                                } else {
+                                                                                                                    echo htmlspecialchars($result['bio']);
+                                                                                                                } ?>">
                     </div>
                     <div class="field">
                         <label for="avatar">Avatar</label> <span><?php echo $avatarErr ?></span>

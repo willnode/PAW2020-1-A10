@@ -34,6 +34,7 @@ if (isset($_POST['submit'])) {
         $_SESSION['name'] = $_POST['name'];
         $_SESSION['bio'] = $_POST['bio'];
         header("location:index.php"); //akan diarahkan ke halaman index.php
+        exit;
     }
 }
 include "view/edit_profile.inc"; //include file edit_profile.inc pada volder view
